@@ -1,0 +1,27 @@
+<div class="person-single container" data-ng-controller='PersonSingleCtrl'>
+
+  <article ng-show="person">
+
+    <header>
+
+      <div class="person-name-container">
+        <h1 class="person-name">
+          <span class="person-first-name">{{ person.field_first_name }}</span>
+          <span class="person-last-name">{{ person.field_last_name }}</span>
+        </h1>
+      </div>
+
+      <figure class="person-image-container" ng-show="person.field_photo.field_image_file.field_image.file.url">
+        <img ng-src="{{ person.field_photo.field_image_file.field_image.file.url }}" alt="{{ person.field_photo.field_image_file.field_image.alt }}" title="{{ person.field_photo.field_image_file.field_image.title }}" />
+        <figcaption ng-show="person.field_photo.field_caption.value" data-ng-bind-html="person.field_photo.field_caption.value"></figcaption>
+      </figure>
+
+    </header>
+
+    <div class="person-bio-container" ng-show="person.field_biography.value">
+      <div data-ng-bind-html="person.field_biography.value"></div>
+    </div>
+
+  </article>
+  
+</div>

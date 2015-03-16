@@ -1,66 +1,6 @@
 'use strict';
 
 /**
- * @ngdoc overview
- * @name SC-app-person
- * @description
- *
- * Provides the app with the ability to display person content and features
- */
-angular
-  .module('SC-app-person', [
-    'SC-app-utils'
-  ]);;'use strict';
-
-/**
- * @ngdoc controller
- * @name SC-app-person.controller:PersonListCtrl
- * @controller
- *
- * @description
- * Defines the state and behaviour of the $scope for the personListView state
- */
-
-angular.module('SC-app-person')
-  .controller('PersonListCtrl', ["$scope", "personFactory", "utilitiesFactory", function($scope, personFactory, utilitiesFactory) {
-
-    /**
-     * Method for getting person list from the API
-     */
-    personFactory.getPersonList( function(data) {
-
-      // Success
-      // Attach the person data to the scope
-      $scope.persons = data;
-
-    }, utilitiesFactory.genericHTTPCallbackError);
-
-}]);;'use strict';
-
-/**
- * @ngdoc controller
- * @name SC-app-person.controller:PersonSingleCtrl
- * @controller
- *
- * @description
- * Defines the state and behaviour of the $scope for the personSingleView state
- */
-angular.module('SC-app-person')
-  .controller('PersonSingleCtrl', ["$scope", "$stateParams", "personFactory", "utilitiesFactory", function ($scope, $stateParams, personFactory, utilitiesFactory) {
-
-    /**
-     * Method for getting a single person from the API
-     */
-    personFactory.getPersonSingle($stateParams.personId, function(person) {
-
-      $scope.person = person;
-
-    }, utilitiesFactory.genericHTTPCallbackError);
-
-  }]);
-;'use strict';
-
-/**
  * @ngdoc service
  * @name SC-app-person.factory:personFactory
  * @factory
@@ -70,7 +10,7 @@ angular.module('SC-app-person')
  */
 
 angular.module('SC-app-person')
-  .factory('personFactory', ["$http", "$rootScope", "appConfig", function($http, $rootScope, appConfig) {
+  .factory('personFactory', function($http, $rootScope, appConfig) {
 
     return {
 
@@ -172,4 +112,4 @@ angular.module('SC-app-person')
 
     };
 
-  }]);
+  });

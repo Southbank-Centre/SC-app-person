@@ -1,0 +1,47 @@
+<div class="person-list container" data-ng-controller='PersonListCtrl'>
+
+  <div class="page-loading" ng-hide="persons"></div>
+  
+  <h1 class="page-heading">Speakers</h1>
+
+  <div class="search-filters" ng-show="persons">
+
+    <input ng-model="search.title" placeholder="Search by first or last name" class="search-filter" key-up-lazy>
+
+  </div>
+
+    <section class="person-list-section">
+  
+      <div class="person-list-repeat repeat-animation" ng-repeat="(characterHeading, person) in persons.list | filter:search | groupBy: 'characterHeading'">
+
+        <h2 class="person-surname-heading">
+          <span>{{ characterHeading }}</span>
+        </h2>
+
+        <article class="person-list-container container" ng-repeat="person in person">
+
+          <div class="person-list-img">
+
+            <a ui-sref="wow.person({ personId: person.alias_json })">
+
+              <img class="lazy" src="/assets/imgs/placeholder-16x9.gif" data-original="{{ person.field_photo.field_image_file.field_image.file.url}}" alt="{{ person.field_photo.field_image_file.field_image.alt }}" title="{{ person.field_photo.field_image_file.field_image.title }}" />
+            </a>
+          </div>
+
+          <div class="person-list-details">
+
+            <h2><a ui-sref="wow.person({ personId: person.alias_json })">{{ person.field_first_name }} {{ person.field_last_name }}</a></h2>
+
+            <div class="person-credentials">{{ person.field_credentials }}</div>
+
+          </div>
+
+        </article>
+
+      </div>
+
+      <div class="no-results repeat-animation" ng-show="(persons.list | filter:search).length === 0">No speakers or artists found.</div>
+    
+    </section>
+
+</div>

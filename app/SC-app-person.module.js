@@ -8,4 +8,6 @@
  * Provides the app with the ability to display person content and features
  */
 angular
-  .module('SC-app-person');
+  .module('SC-app-person', [
+    'SC-app-utils'
+  ]);
