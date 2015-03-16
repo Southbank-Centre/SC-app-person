@@ -14,7 +14,7 @@ angular.module('SC-app-person')
     /**
      * Method for getting a single person from the API
      */
-    personFactory.getPersonSingle($stateParams.personId, function(person) {
+    personFactory.getPersonSingle($stateParams.personAlias, function(person) {
 
       $scope.person = person;
 

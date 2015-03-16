@@ -51,7 +51,7 @@ angular.module('SC-app-person')
     /**
      * Method for getting a single person from the API
      */
-    personFactory.getPersonSingle($stateParams.personId, function(person) {
+    personFactory.getPersonSingle($stateParams.personAlias, function(person) {
 
       $scope.person = person;
 
@@ -86,9 +86,9 @@ angular.module('SC-app-person')
        * @description
        * For getting data for a single person by person ID
        */
-      getPersonSingle: function (personId, callbackSuccess, callbackError) {
+      getPersonSingle: function (personAlias, callbackSuccess, callbackError) {
 
-        $http.get('/json/api/person/' + personId)
+        $http.get('/json/api/person/' + personAlias)
           .success(callbackSuccess)
           .error(callbackError);
 
