@@ -16,15 +16,23 @@ Replace n.n.n with the version number of this module that you require. See [the 
 Add **SC-app-person** to the dependency list in **[YourAppName].module.js**
 
 ### Step 3
-Add the app.page state to your app:
+Add the app.pageSingle and app.pageList states to your app:
 
-    .state('app.person', {
-      url: '/person/:personAlias',
+    .state('app.personSingle', {
+      url: '^/person/:personAlias',
       views: {
         '@': {
           templateUrl: 'bower_components/SC-app-person/release/personSingleView.html'
         }
       }
     })
+    .state('app.personList', {
+      url: '^/person',
+      views: {
+        '@': {
+          templateUrl: 'bower_components/SC-app-person/release/personListView.html'
+        }
+      }
+    })
 
-The URL can be changed to whatever is required, although the parameter *:personAlias* should remain the same for the page to work.
+The URLs can be changed to whatever is required, although the parameter *:personAlias* should remain the same for the page to work.
