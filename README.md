@@ -2,6 +2,10 @@
 
 ## Installation
 
+### Step 0
+
+Check [this app's dependencies](https://github.com/Southbank-Centre/SC-app-person/blob/master/bower.json) and make sure that you follow the installation instructions for the SC-app-* modules that this one depends on.
+
 ### Step 1
 Run the following command in your app's root directory.
 
