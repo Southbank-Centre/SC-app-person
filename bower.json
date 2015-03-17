@@ -2,7 +2,7 @@
   "name": "SC-app-person",
   "version": "0.0.0",
   "dependencies": {
-  	"angular": "~1.2.0",
+    "angular": "~1.2.0",
     "SC-app-utils": "Southbank-Centre/SC-app-utils"
   },
   "appPath": "app",
