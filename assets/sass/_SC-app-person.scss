@@ -1,0 +1,139 @@
+// Person
+
+.person-single {
+
+  min-height: 200px;
+
+  .person-name-container {
+    @include breakpoint($bp-small-desktop) {
+      @include span(9);
+    }
+
+    @include breakpoint($bp-desktop) {
+      @include span(6);
+    }
+
+    h1 {
+      margin:0;
+    }
+
+    background-color:white;
+    padding: $padding;
+    margin-bottom:0;
+    word-wrap:break-word;
+  }
+
+  .person-bio-container {
+    padding:$padding/2 $padding;
+    background-color: $white;
+    @include breakpoint($bp-small-desktop) {
+      @include span(10);
+    }
+
+    @include breakpoint($bp-desktop) {
+      @include span(7);
+    }
+  }
+
+}
+
+// Person List
+ 
+.person-list {
+
+  min-height: 200px;
+
+  @include breakpoint($bp-mobile) {
+    .person-list-repeat:first-child { margin-top: -$margin*3; }
+  }
+
+  .page-heading {
+    margin-top:$margin;
+
+    @include breakpoint($bp-small-desktop) {
+      margin-top:$margin*2.5;
+    }
+  }
+
+  .person-surname-heading { 
+    clear: both;
+    text-transform: uppercase;
+    margin: 0;
+    padding: $padding*3 $padding $padding;
+    span {
+      display: inline-block;
+      border: 1px solid $dark-grey;
+      line-height: 1;
+      padding: $padding/2 $padding/2 $padding/4;
+    }
+  }
+
+  .person-list-container {
+    @include breakpoint($bp-small-desktop) {
+      @include span(6);
+      &:nth-of-type(even) { @include span(6 last); }
+    }
+    clear: none;
+    margin-bottom: 2px;
+    background: $white;
+
+    .person-list-img { 
+      @include span(3 of 6);
+      @include breakpoint($bp-small-desktop) {
+        @include span(3 of 6);
+        border-bottom: 0;
+      }
+      img { 
+        width: 100%; 
+        height: auto;
+        vertical-align: top; 
+        opacity: .8;
+      }
+      background: $white;
+      a { }
+    }
+    &:hover img { opacity: 1; }
+
+    .person-list-details {
+      vertical-align: top;
+      word-wrap: break-word;
+      @include span(3 of 6 last);
+      background-color: white;
+      padding: $padding $padding $padding/2;
+
+      h3 {
+        a { background: none; color: $dark-grey; }
+        a:hover { color: $link-color; }
+      }
+      .event-list-type {
+        margin: 0 0 0.5em;
+      }
+
+    }
+    
+  }
+
+}
+
+// Specific styling for person list search filters
+
+.person-list .search-filters {
+  background: none;
+  padding: 0 $padding;
+  position: relative;
+  input { 
+    width: 100%;
+    float: none;
+    margin-left: 0;
+    margin-right: 0;
+    background-color: $white;
+    border-right-color: $white;
+    @include breakpoint($bp-mobile) {
+      position: absolute;
+      top: 0;
+      right: $padding;
+      width: 285px;
+      margin-bottom: 0;
+    }
+  }
+}
