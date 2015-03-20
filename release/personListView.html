@@ -2,7 +2,7 @@
 
   <div class="page-loading" ng-hide="persons"></div>
   
-  <h1 class="page-heading">Speakers</h1>
+  <h1 class="large-heading">Speakers</h1>
 
   <div class="search-filters" ng-show="persons">
 
@@ -24,13 +24,13 @@
 
             <a ui-sref="app.personSingle({ personAlias: person.alias_json })">
 
-              <img class="lazy" src="/assets/imgs/placeholder-16x9.gif" data-original="{{ person.field_photo.field_image_file.field_image.file.url}}" alt="{{ person.field_photo.field_image_file.field_image.alt }}" title="{{ person.field_photo.field_image_file.field_image.title }}" />
+              <img class="lazy" src="/assets/imgs/placeholder-16x9.gif" data-original="{{ person.field_image.file.url}}" alt="{{ person.field_image.alt }}" title="{{ person.field_image.title }}" />
             </a>
           </div>
 
           <div class="person-list-details">
 
-            <h2><a ui-sref="app.personSingle({ personAlias: person.alias_json })">{{ person.field_first_name }} {{ person.field_last_name }}</a></h2>
+            <h3><a ui-sref="app.personSingle({ personAlias: person.alias_json })">{{ person.field_first_name }} {{ person.field_last_name }}</a></h3>
 
             <div class="person-credentials">{{ person.field_credentials }}</div>
 
