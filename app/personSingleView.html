@@ -11,9 +11,9 @@
         </h1>
       </div>
 
-      <figure class="person-image-container" ng-show="person.field_photo.field_image_file.field_image.file.url">
-        <img ng-src="{{ person.field_photo.field_image_file.field_image.file.url }}" alt="{{ person.field_photo.field_image_file.field_image.alt }}" title="{{ person.field_photo.field_image_file.field_image.title }}" />
-        <figcaption ng-show="person.field_photo.field_caption.value" data-ng-bind-html="person.field_photo.field_caption.value"></figcaption>
+      <figure class="person-image-container" ng-show="person.field_image.file.url">
+        <img ng-src="{{ person.field_image.file.url }}" alt="{{ person.field_image.alt }}" title="{{ person.field_image.title }}" />
+        <figcaption ng-show="person.field_image.title" data-ng-bind-html="person.field_image.title"></figcaption>
       </figure>
 
     </header>
